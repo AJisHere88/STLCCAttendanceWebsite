@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        Login Screen for Students
+        Author: Team Venture
+   
+        Filename: LoginPage.html
+   
+        -->
+      
+        <meta charset="utf-8" />
+        <title>Student Attendance Login</title>
+        <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+        <script src="LoginPageJava.js"></script>
+    </head>
+    <body>
+        <div id="LogoBackground">
+        <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
+        </div>
+        <h1>Attendance Login</h1>
+        <nav class="homeNav">
+            <ul>
+                <li><a href="STLCCAttendanceHome.html" class="notPage">Home →</a></li>
+                <li><a href="LoginPage.html" class="currentPage">Login</a></li>
+                <li><a href="AttendanceReports.html" class="notPage">Attendance Reports →</a></li>
+            </ul>
+        </nav>
+        <br />
+        <p id="homePara">If you're a student logging in, you will have the ability 
+        to enter a code (provided by the instructor). If you're an instructor, you
+        will be able to choose a course to generate an access code for. <strong>This
+        code must be submitted by students within 5 minutes after class begins.</strong><br /><br />
+        <em>Please enter your login information.</em></p>
+        <form id="UserLoginForm">
+            <table BORDER="0" id="UserLogin">
+                <tr>
+                    <td>School Email:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="UserEmail" size="21"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="UserPassword" size="21"></td>
+                </tr>
+            </table>
+        </form>
+        <p id="ShowPass"><input type="checkbox" id="ShowPassword">Show Password</p>
+        <div id="UserError"></div>
+        <input type="button" id="UserClearButton" value="Clear">
+        <input type="button" id="UserSubmitButton" value="Login">
+    </body>

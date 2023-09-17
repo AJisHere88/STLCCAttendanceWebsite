@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        Online Attendance Tracker
+        Author: Team Venture
+   
+        Filename: InstructorSTLCCAttendance.html
+   
+        -->
+      
+        <meta charset="utf-8" />
+        <title>Online Attendance Tracker</title>
+        <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+        <script src="InstructorSTLCCAttendanceJava.js"></script>
+    </head>
+    <body>
+        <div id="LogoBackground">
+        <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
+        </div>
+        <h1>STLCC Online Attendance Tracking</h1>
+        <nav class="homeNav">
+            <ul>
+                <li><a href="STLCCAttendanceTracker.html" class="notPage">Home →</a></li>
+                <li><a href="LoginPage.html" class="notPage">Login →</a></li>
+                <li><a href="AttendanceReports.html" class="notPage">Attendance Reports →</a></li>
+            </ul>
+        </nav>
+	<br />
+        <p id="homePara">Hello Instructor! To generate a code, please select the
+        course you would like to generate it for and then click <strong>Generate 
+        Code</strong>.</p>
+        <div id="InstructorCourses">
+            <p id="instructorCourseSelect">Select a Course:</p>
+            <br/>
+            <input name="Course" list="Courses" id="courseDropdown">
+            <datalist id="Courses">
+                <option value="Course 1">
+                <option value="Course 2">
+                <option value="Course 3">
+            </datalist>
+            <br/>
+            <br/>
+            <br/>
+            <div id="InstructorError"></div>
+            <input type="button" id="InstructorSubmitButton" value="Generate Code">
+        </div>
+        <div id="InstructorSuccess"></div>
+    </body>
