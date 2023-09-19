@@ -28,10 +28,7 @@ function fnShowPassword() {
     } else {
         show.type = "password";
     }
-}
-
-function fnGenerateCode() {
-    
+    $("UserPassword").focus();
 }
 
 function fnSubmit() {
