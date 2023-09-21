@@ -12,18 +12,20 @@
         <meta charset="utf-8" />
         <title>Attendance Reports</title>
         <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+	<link rel="icon" href="STLCC_favicon.jpg">
     </head>
     <body>
         <div id="LogoBackground">
         <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
         </div>
         <h1>Attendance Reports</h1>
-        <nav class="homeNav">
-            <ul>
-                <li><a href="index.html" class="notPage">Home →</a></li>
-                <li><a href="LoginPage.html" class="notPage">Login →</a></li>
-                <li><a href="AttendanceReports.html" class="currentPage">Attendance Reports</a></li>
-            </ul>
+        <nav id="navigationButtons">
+            <table BORDER="0" id="navTable">
+                <tr>
+                    <td class="notPage" id="b1"><button onclick = "window.location.href='index.html';">Home →</button></td>
+                    <td class="notPage" id="b3"><button onclick = "window.location.href='LoginPage.html';">Login →</button></td>
+                </tr>
+            </table>
         </nav>
 	<br />
         <p id="homePara">This page will only be accessible to instructors.</p>
