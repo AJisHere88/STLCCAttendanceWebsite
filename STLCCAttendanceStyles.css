@@ -24,83 +24,79 @@ body {
 }
 
 /*Navigation Styles*/
-nav.homeNav {
-    display: block;
-    width: 100%;
-}
-
-nav.homeNav ul {
-    list-style: none;
-}
-@media only screen and (min-width: 900px) {
-nav.homeNav ul li {
-    display: flex;
-    width: 30%;
-    float: left;
-    justify-content: center;
-}
-}
-
-@media only screen and (max-width: 899px) {
-nav.homeNav li {
-    display: block;
-    width: 80%;
-}
-}
-
-nav.homeNav li a:link.currentPage, nav.homeNav li a:visited.currentPage, nav.homeNav li a:hover.currentPage {
-    color: rgb(0,36,83);
-    font-size: 25px;
-    background-color: rgb(213,121,0);
-    text-decoration: underline;
-    font-weight: bold;
-}
-nav.homeNav li a:link.notPage, nav.homeNav li a:visited.notPage {
-    color: rgb(255,255,255);
-    font-size: 25px;
-    text-decoration: none;
-    background-color: rgb(213,121,0);
-    font-weight: bold;
-}
-nav.homeNav li a:hover.notPage, nav.homeNav li a:active.notPage {
-    color: rgb(255,255,255);
-    font-size: 25px;
-    font-weight: bold;
-    background-color: rgb(162,92,0);
-    text-decoration: none;
-}
-/* TEMP */
 nav#navigationButtons {
     display: block;
     width: 100%;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
 nav#navigationButtons table#navTable {
+    position: relative;
     display: flex;
     width: 100%;
-    float: left;
     justify-content: center;
 }
-
-}
 td#b1 {
+    position: absolute;
     float: left;
-    text-align: left;
+    left: 250px;
 }
 td#b3 {
+    position: absolute;
     float: right;
-    text-align: right;
+    right: 250px;
 }
-
-nav#navigationButtons button {
+}
+@media only screen and (max-width: 799px) {
+nav#navigationButtons table#navTable {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+}
+nav#navigationButtons td.notPage button {
     color: rgb(255,255,255);
-    font-size: 25px;
     text-decoration: none;
     background-color: rgb(213,121,0);
     font-weight: bold;
     border-radius: 10px;
     border-spacing: 70px 0px;
+    font-size: 30px;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: none;
+}
+nav#navigationButtons td.notPage button:hover {
+    color: rgb(255,255,255);
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(162,92,0);
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: none;
+}
+nav#navigationButtons td.notPage button:active {
+    color: rgb(250,250,250);
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(170,100,8);
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: none;
+}
+nav#navigationButtons td.currentPage button, nav#navigationButtons td.currentPage button:hover,
+nav#navigationButtons td.currentPage button:active {
+    color: rgb(0,36,83);
+    font-size: 30px;
+    background-color: rgb(213,121,0);
+    text-decoration: underline;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: none;
 }
 
 /*Home Paragraph Styles*/
