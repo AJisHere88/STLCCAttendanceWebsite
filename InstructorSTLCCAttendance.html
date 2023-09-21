@@ -12,6 +12,7 @@
         <meta charset="utf-8" />
         <title>Online Attendance Tracker</title>
         <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+	<link rel="icon" href="STLCC_favicon.jpg">
         <script src="InstructorSTLCCAttendanceJava.js"></script>
     </head>
     <body>
@@ -19,12 +20,13 @@
         <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
         </div>
         <h1>STLCC Online Attendance Tracking</h1>
-        <nav class="homeNav">
-            <ul>
-                <li><a href="index.html" class="notPage">Home →</a></li>
-                <li><a href="LoginPage.html" class="notPage">Login →</a></li>
-                <li><a href="AttendanceReports.html" class="notPage">Attendance Reports →</a></li>
-            </ul>
+        <nav id="navigationButtons">
+            <table BORDER="0" id="navTable">
+                <tr>
+                    <td class="notPage" id="b1"><button onclick = "window.location.href='index.html';">Home →</button></td>
+                    <td class="notPage" id="b3"><button onclick = "window.location.href='LoginPage.html';">Login →</button></td>
+                </tr>
+            </table>
         </nav>
 	<br />
         <p id="homePara">Hello Instructor! To generate a code, please select the
@@ -41,9 +43,12 @@
             </datalist>
             <br/>
             <br/>
-            <br/>
             <div id="InstructorError"></div>
             <input type="button" id="InstructorSubmitButton" value="Generate Code">
         </div>
         <div id="InstructorSuccess"></div>
+	<br/>
+	<br/>
+	<br/>
+	<button id ="attendanceButton" onclick = "window.location.href='AttendanceReports.html';">Attendance Reports →</button>
     </body>
