@@ -12,6 +12,7 @@
         <meta charset="utf-8" />
         <title>Student Attendance Login</title>
         <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+        <link rel="icon" href="STLCC_favicon.jpg">
         <script src="LoginPageJava.js"></script>
     </head>
     <body>
@@ -19,12 +20,13 @@
         <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
         </div>
         <h1>Attendance Login</h1>
-        <nav class="homeNav">
-            <ul>
-                <li><a href="index.html" class="notPage">Home →</a></li>
-                <li><a href="LoginPage.html" class="currentPage">Login</a></li>
-                <li><a href="AttendanceReports.html" class="notPage">Attendance Reports →</a></li>
-            </ul>
+        <nav id="navigationButtons">
+            <table BORDER="0" id="navTable">
+                <tr>
+                    <td class="notPage" id="b1"><button onclick = "window.location.href='STLCCAttendanceHome.html';">Home →</button></td>
+                    <td class="currentPage" id="b3"><button onclick = "window.location.href='LoginPage.html';">Login</button></td>
+                </tr>
+            </table>
         </nav>
         <br />
         <p id="homePara">If you're a student logging in, you will have the ability 
