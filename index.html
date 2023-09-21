@@ -5,25 +5,27 @@
         Online Attendance Tracker
         Author: Team Venture
    
-        Filename: STLCCAttendanceHome.html
+        Filename: index.html
    
         -->
       
         <meta charset="utf-8" />
         <title>Online Attendance Tracker</title>
         <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+	<link rel="icon" href="STLCC_favicon.jpg">
     </head>
     <body>
         <div id="LogoBackground">
         <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
         </div>
         <h1>STLCC Online Attendance Tracking</h1>
-        <nav class="homeNav">
-            <ul>
-                <li><a href="index.html" class="currentPage">Home</a></li>
-                <li><a href="LoginPage.html" class="notPage">Login →</a></li>
-                <li><a href="AttendanceReports.html" class="notPage">Attendance Reports →</a></li>
-            </ul>
+        <nav id="navigationButtons">
+            <table BORDER="0" id="navTable">
+                <tr>
+                    <td class="currentPage" id="b1"><button onclick = "window.location.href='index.html';">Home</button></td>
+                    <td class="notPage" id="b3"><button onclick = "window.location.href='LoginPage.html';">Login →</button></td>
+                </tr>
+            </table>
         </nav>
 	<br />
         <p id="homePara">Welcome! Please <strong>Login</strong> so that you may 
