@@ -26,6 +26,7 @@ function generateAccessCode(codeLength) {
 function fnISubmit() {
     var iremoveAll = document.getElementById("InstructorCourses");
     var iCourse = $("courseDropdown").value.trim();
+    var accessCode = generateAccessCode(11);
     if (iCourse === "") {
         $("InstructorError").innerHTML = "Invalid Course Selection";
         $("InstructorSuccess").innerHTML = "";
