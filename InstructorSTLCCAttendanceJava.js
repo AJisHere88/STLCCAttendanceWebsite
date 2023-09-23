@@ -11,6 +11,18 @@ window.onload = function() {
     $("InstructorSubmitButton").onclick = fnISubmit;
 };
 
+const codeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+function generateAccessCode(codeLength) {
+    let accessCode = '';
+    const codeCharsLength = codeChars.length;
+    for (let i = 0; i < codeLength; i++) {
+        accessCode += codeChars.charAt(Math.floor(Math.random() * codeCharsLength));
+    }
+    
+    return accessCode;
+};
+
 function fnISubmit() {
     var iremoveAll = document.getElementById("InstructorCourses");
     var iCourse = $("courseDropdown").value.trim();
@@ -19,13 +31,16 @@ function fnISubmit() {
         $("InstructorSuccess").innerHTML = "";
     } else if (iCourse === "Course 1") {
         iremoveAll.parentNode.removeChild(iremoveAll);
-        $("InstructorSuccess").innerHTML = "Your access code for course 1 is <u>123</u>";
+        $("InstructorSuccess").innerHTML = "Your access code for course 1 is <u>"
+        + accessCode + "</u>";
     } else if (iCourse === "Course 2") {
         iremoveAll.parentNode.removeChild(iremoveAll);
-        $("InstructorSuccess").innerHTML = "Your access code for course 2 is <u>456</u>";
+        $("InstructorSuccess").innerHTML = "Your access code for course 2 is <u>"
+        + accessCode + "</u>";
     } else if (iCourse === "Course 3") {
         iremoveAll.parentNode.removeChild(iremoveAll);
-        $("InstructorSuccess").innerHTML = "Your access code for course 3 is <u>789</u>";
+        $("InstructorSuccess").innerHTML = "Your access code for course 3 is <u>"
+        + accessCode + "</u>";
     } else {
         $("InstructorError").innerHTML = "Invalid Course Selection";
     }
