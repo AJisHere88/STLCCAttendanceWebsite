@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        Online Attendance Tracker
+        Author: Team Venture
+                Code by: AJ Prescott
+   
+        Filename: AddCourse.html
+   
+        -->
+      
+        <meta charset="utf-8" />
+        <title>Online Attendance Tracker</title>
+        <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+        <link rel="icon" href="STLCC_favicon.jpg">
+        <script src="AddCourseJava.js"></script>
+    </head>
+    <body>
+        <div id="LogoBackground">
+        <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
+        </div>
+        <h1>STLCC Online Attendance Tracking</h1>
+        <nav id="navigationButtons">
+            <table BORDER="0" id="navTable">
+                <tr>
+                    <td class="notPage" id="b1"><button onclick = "window.location.href='index.html';">Home →</button></td>
+                    <td class="notPage" id="b3"><button onclick = "window.location.href='LoginPage.html';">Login →</button></td>
+                </tr>
+            </table>
+        </nav>
+	<br />
+        <p id="homePara">Please enter the following information in order to add
+        a course to the database.</p>
+        <div id="allCourseInfo">
+            <form id="addCourseForm">
+                <table BORDER="0" id="addCourseTable">
+                    <tr>
+                        <td>Course Code:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="courseCode" size="26"></td>
+                    </tr>
+                    <tr>
+                        <td>Course Name:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="courseName" size="26"></td>
+                    </tr>
+                    <tr>
+                        <td>Instructor ID:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="instructorID" size="26"><br/></td>
+                    </tr>
+                    <tr>
+                        <td>Start Time: <input type="time" id="startTime" size="26"></td>
+                    </tr>
+                    <tr>
+                        <td>End Time:   <input type="time" id="endTime" size="26"></td>
+                    </tr>
+                </table>
+            </form>
+            <br/>
+            <div id="CourseError"></div>
+            <input type="button" id="CourseClearButton" value="Clear">
+            <input type="button" id="CourseSubmitButton" value="Add Course">
+        </div>
+        <div id ="CourseSuccess"></div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </body>
