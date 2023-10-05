@@ -33,7 +33,7 @@ function fnSubmit() {
         $("CourseSuccess").innerHTML = "";
     } else {
         iremoveAll.parentNode.removeChild(iremoveAll);
-        $("CourseSuccess").innerHTML = "Your course was successfully added!";
+        $("CourseSuccess").innerHTML = name + " was successfully added!";
     }
         
 };
