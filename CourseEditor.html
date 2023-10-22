@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        Online Attendance Tracker
+        Author: Team Venture
+   
+        Filename: CourseEditor.html
+   
+        -->
+      
+        <meta charset="utf-8" />
+        <title>Online Attendance Tracker</title>
+        <link rel="stylesheet" href="STLCCAttendanceStyles.css" />
+        <script src="CourseEditorJava.js"></script>
+    </head>
+    <body>
+        <div id="LogoBackground">
+        <img src="STLCC_Logo.png" alt="STLCC Logo" id="STLCCLogo"/>
+        </div>
+        <h1>STLCC Online Attendance Tracking</h1>
+        <nav id="navigationButtons">
+            <table BORDER="0" id="navTable">
+                <tr>
+                    <td class="notPage" id="b1"><button onclick = "window.location.href='STLCCAttendanceHome.html';">Home →</button></td>
+                    <td class="notPage" id="b3"><button onclick = "window.location.href='LoginPage.html';">Login →</button></td>
+                </tr>
+            </table>
+        </nav>
+	<br />
+        <p id="editPara"><strong>Add Student:</strong> Enter an email not currently in
+        use as well as the password that will be associated with the email. <br/>
+        <strong>Remove Student:</strong> Enter the email of an existing student you would
+        like to remove from the course. A password is not required for this option. <br/>
+        <strong>Change Password:</strong> Enter an existing student's email and the new password
+        that will be linked to that email.</p>
+        <form id="UserLoginForm">
+            <table BORDER="0" id="UserLogin">
+                <tr>
+                    <td>School Email:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="UserEmail" size="21"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="UserPassword" size="21"></td>
+                </tr>
+            </table>
+        </form>
+        <div id="UserError"></div>
+        <br />
+        <input type="button" id="addStudent" value="Add">
+        <input type="button" id="removeStudent" value="Remove">
+        <input type="button" id="editStudent" value="Change">
+        <div id="studentAdd"></div>
+        <div id="studentRemove"></div>
+        <div id="studentEdit"></div>
+        <br/>
+        <br/>
+        <br/>
+        <button id ="attendanceButton" onclick = "window.location.href='AttendanceReports.html';">Attendance Reports →</button>
+    </body>
