@@ -47,3 +47,13 @@ function fnISubmit() {
         $("InstructorError").innerHTML = "Invalid Course Selection";
     }
 }
+
+function fneditCourse() {
+    var iCourse = $("courseDropdown").value.trim();
+    if (iCourse === "Course 1" || iCourse === "Course 2" || iCourse === "Course 3") {
+        window.location.href='CourseEditor.html';
+    } else {
+        $("InstructorError").innerHTML = "Invalid Course Selection";
+        $("InstructorSuccess").innerHTML = "";
+    }
+}
