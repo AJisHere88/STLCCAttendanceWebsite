@@ -12,7 +12,7 @@ window.onload = function() {
     $("InstructorSubmitButton").onclick = fnISubmit;
 };
 
-const codeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const codeChars = 'ABCDEFGHJKLMNPQRSTUVWXY3456789';
 
 function generateAccessCode(codeLength) {
     let accessCode = '';
