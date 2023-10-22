@@ -29,7 +29,7 @@ function fnAdd() {
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
     } else if (uPassword.length < 6) {
-        $("UserError").innerHTML = "Password must be 6+ characters";
+        $("UserError").innerHTML = "Password must be 6+ characters.";
         $("studentAdd").innerHTML = "";
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
@@ -54,7 +54,7 @@ function fnRemove() {
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
     } else if (uEmail === "invalid@my.stlcc.edu") {
-        $("UserError").innerHTML = "That student is not enrolled in this course";
+        $("UserError").innerHTML = "That student is not enrolled in this course.";
         $("studentAdd").innerHTML = "";
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
@@ -80,7 +80,7 @@ function fnEdit() {
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
     } else if (uPassword.length < 6) {
-        $("UserError").innerHTML = "New password must be 6+ characters";
+        $("UserError").innerHTML = "New password must be 6+ characters.";
         $("studentAdd").innerHTML = "";
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
