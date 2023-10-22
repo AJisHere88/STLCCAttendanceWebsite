@@ -10,6 +10,7 @@ var $ = function (id) {
 
 window.onload = function() {
     $("InstructorSubmitButton").onclick = fnISubmit;
+    $("editCourse").onclick = fneditCourse;
 };
 
 const codeChars = 'ABCDEFGHJKLMNPQRSTUVWXY3456789';
