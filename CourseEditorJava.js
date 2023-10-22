@@ -53,6 +53,11 @@ function fnRemove() {
         $("studentAdd").innerHTML = "";
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
+    } else if (uEmail === "invalid@my.stlcc.edu") {
+        $("UserError").innerHTML = "That student is not enrolled in this course";
+        $("studentAdd").innerHTML = "";
+        $("studentRemove").innerHTML = "";
+        $("studentEdit").innerHTML = "";
     } else {
         $("UserError").innerHTML = "";
         $("studentAdd").innerHTML = "";
@@ -66,11 +71,6 @@ function fnEdit() {
     var uPassword = $("UserPassword").value.trim();
     if (uEmail === "" || uEmail.substring(uEmail.length - 13) !== "@my.stlcc.edu") {
         $("UserError").innerHTML = "Email must end in @my.stlcc.edu";
-        $("studentAdd").innerHTML = "";
-        $("studentRemove").innerHTML = "";
-        $("studentEdit").innerHTML = "";
-    } else if (uEmail === "invalid@my.stlcc.edu") {
-        $("UserError").innerHTML = "That student is not enrolled in this course";
         $("studentAdd").innerHTML = "";
         $("studentRemove").innerHTML = "";
         $("studentEdit").innerHTML = "";
