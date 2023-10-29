@@ -10,39 +10,30 @@ GO
 USE AttendanceDB
 GO
 
-CREATE TABLE Students (
-		StudentID		INT			NOT NULL	PRIMARY KEY IDENTITY(1000,1)
-	,	FirstName		varchar(30)	NOT NULL
-	,	LastName		varchar(30)	NOT NULL
-	,	Email			varchar(100)NOT NULL
-	,	StudentPass		varchar(255)NOT NULL);
+CREATE TABLE UserType (
+		User_Type_ID		INT				NOT NULL	PRIMARY KEY IDENTITY(10,40)
+	,	User_Type_Desc	varchar(100)		NOT NULL);
 
-CREATE TABLE Instructors (
-		InstructorID	INT			NOT NULL	PRIMARY KEY IDENTITY(9000,10)
+CREATE TABLE Users (
+		UserID			INT			NOT NULL	PRIMARY KEY IDENTITY(1000,1)
 	,	FirstName		varchar(30)	NOT NULL
 	,	LastName		varchar(30)	NOT NULL
 	,	Email			varchar(100)NOT NULL
-	,	InstructPass	varchar(255)NOT NULL);
-
-CREATE TABLE Staff (
-		StaffID			INT			NOT NULL	PRIMARY KEY IDENTITY(7000,10)
-	,	FirstName		varchar(30)	NOT NULL
-	,	LastName		varchar(30)	NOT NULL
-	,	Email			varchar(100)NOT NULL
-	,	StaffPass		varchar(255)NOT NULL);
+	,	User_Type_ID	INT			NOT NULL	FOREIGN KEY(User_Type_ID) REFERENCES UserType(User_Type_ID)
+	,	UserPass		varchar(255)NOT NULL);
 
 
 CREATE TABLE Course (
 		CourseID		INT			NOT NULL	PRIMARY KEY IDENTITY(3000,10)
 	,	CourseCode		varchar(10)	NOT NULL
 	,	CourseName		varchar(100)	NOT NULL
-	,	InstructorID	INT			NOT NULL	FOREIGN KEY (InstructorID) REFERENCES Instructors(InstructorID)
+	,	UserID			INT			NOT NULL	FOREIGN KEY (UserID) REFERENCES Users(UserID)
 	,	CourseStartTime	Time(0)		NOT NULL
 	,	CourseEndTime	Time(0)		NOT NULL);
 
 CREATE TABLE Enrollment (
 		EnrollID		INT			NOT NULL	PRIMARY KEY IDENTITY(600,10)
-	,	StudentID		INT			NOT NULL	FOREIGN KEY (StudentID) REFERENCES Students(StudentID)		
+	,	UserID			INT			NOT NULL	FOREIGN KEY (UserID) REFERENCES Users(UserID)		
 	,	CourseID		INT			NOT NULL	FOREIGN KEY (CourseID) REFERENCES Course(CourseID));
 
 
@@ -52,7 +43,7 @@ CREATE TABLE AccessCode (
 	,	CreationTime		Time(0)		NOT NULL
 	,	EndTime				Time(0)		NOT NULL
 	,	CourseID			INT			NOT NULL	FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
-	,	InstructorID		INT			NOT NULL	FOREIGN KEY (InstructorID) REFERENCES Instructors(InstructorID));
+	,	UserID				INT			NOT NULL	FOREIGN KEY (UserID) REFERENCES Users(UserID));
 
 
 
@@ -63,62 +54,62 @@ CREATE TABLE Attendance (
 	,	EnrollID		INT			NOT NULL	FOREIGN KEY (EnrollID) REFERENCES Enrollment(EnrollID));
 
 
-INSERT INTO Students
+INSERT INTO UserType
 VALUES
-		('Tim', 'Taylor', 'ttaylor@my.stlcc.com', '1111')
-	,	('Mary', 'Diaz', 'mdiaz@my.stlcc.com', '1111')
-	,	('Ryan', 'Woldz', 'rwoldz@my.stlcc.com', '1111')
-	,	('Sarah', 'Kim', 'skim@my.stlcc.com', '1111')
-	,	('Andrea', 'Budd', 'abudd@my.stlcc.com', '1111')
-	,	('Margret', 'Polt', 'mpolt@my.stlcc.com', '1111')
-	,	('Ryan', 'Gold', 'rgold@my.stlcc.com', '1111')
-	,	('Craig', 'Higgins', 'chiggins@my.stlcc.com', '1111')
-	,	('Jaylen', 'Avila', 'javila@my.stlcc.com', '1111')
-	,	('Lauren', 'Dickerson', 'ldickerson@my.stlcc.com', '1111')
-	,	('Rey', 'Fisher', 'rfisher@my.stlcc.com', '1111')
-	,	('Flynn', 'Gallegos', 'fgallegos@my.stlcc.com', '1111')
-	,	('Arya', 'Curry', 'acurry@my.stlcc.com', '1111')
-	,	('Ronan', 'Bradley', 'rbradley@my.stlcc.com', '1111')
-	,	('Annie ', 'Mitchell', 'amitchell@my.stlcc.com', '1111')
-	,	('Kade', 'Galindo', 'kgalindo@my.stlcc.com', '1111')
-	,	('Daleyza', 'Chapman', 'dchapman@my.stlcc.com', '1111')
-	,	('Bowen', 'Sparks', 'bsparks@my.stlcc.com', '1111')
-	,	('Kimberly', 'Joseph', 'kjoseph@my.stlcc.com', '1111')
-	,	('Ulises', 'Rasmussen', 'urasmussen@my.stlcc.com', '1111')
-	,	('Saige', 'Morrison', 'smorrison@my.stlcc.com', '1111')
-	,	('Osiris', 'Stafford', 'ostafford@my.stlcc.com', '1111')
-	,	('Aleah', 'Stanley', 'astanley@my.stlcc.com', '1111')
-	,	('Dominik', 'Lawrence', 'dlawrence@my.stlcc.com', '1111')
-	,	('Oakleigh', 'Foster', 'ofoster@my.stlcc.com', '1111')
-	,	('Marco', 'Abbott', 'mabbott@my.stlcc.com', '1111')
-	,	('Marlowe', 'Huang', 'mhuang@my.stlcc.com', '1111')
-	,	('Brooks', 'Dennis', 'adennis@my.stlcc.com', '1111')
-	,	('Amelie', 'Fuentes', 'afuentes@my.stlcc.com', '1111')
-	,	('Franklin', 'Blackwell', 'fblackwell@my.stlcc.com', '1111');
+		('Students')
+	,	('Instructors')
+	,	('Staff');
 
-INSERT INTO Instructors
+INSERT INTO Users
 VALUES
-		('Amaya', 'Hancock', 'ahancock@stlcc.com', '9999')
-	,	('Luka', 'Butler', 'lbutler@stlcc.com', '9999')
-	,	('Maeve', 'Orr', 'morr@stlcc.com', '9999');
-
-INSERT INTO Staff
-VALUES
-		('Clarissa', 'Villa', 'ahancock@stlcc.com', '7777')
-	,	('Hayden', 'Xiong', 'hxiong@stlcc.com', '7777')
-	,	('Jenesis', 'Zimmerman', 'jzimmerman@stlcc.com', '7777');
+		('Tim', 'Taylor', 'ttaylor@my.stlcc.com','10', '1111')
+	,	('Mary', 'Diaz', 'mdiaz@my.stlcc.com','10', '1111')
+	,	('Ryan', 'Woldz', 'rwoldz@my.stlcc.com','10', '1111')
+	,	('Sarah', 'Kim', 'skim@my.stlcc.com','10', '1111')
+	,	('Andrea', 'Budd', 'abudd@my.stlcc.com','10', '1111')
+	,	('Margret', 'Polt', 'mpolt@my.stlcc.com','10', '1111')
+	,	('Ryan', 'Gold', 'rgold@my.stlcc.com','10', '1111')
+	,	('Craig', 'Higgins', 'chiggins@my.stlcc.com','10', '1111')
+	,	('Jaylen', 'Avila', 'javila@my.stlcc.com','10', '1111')
+	,	('Lauren', 'Dickerson', 'ldickerson@my.stlcc.com','10', '1111')
+	,	('Rey', 'Fisher', 'rfisher@my.stlcc.com','10', '1111')
+	,	('Flynn', 'Gallegos', 'fgallegos@my.stlcc.com','10', '1111')
+	,	('Arya', 'Curry', 'acurry@my.stlcc.com','10', '1111')
+	,	('Ronan', 'Bradley', 'rbradley@my.stlcc.com','10', '1111')
+	,	('Annie ', 'Mitchell', 'amitchell@my.stlcc.com','10', '1111')
+	,	('Kade', 'Galindo', 'kgalindo@my.stlcc.com','10', '1111')
+	,	('Daleyza', 'Chapman', 'dchapman@my.stlcc.com','10', '1111')
+	,	('Bowen', 'Sparks', 'bsparks@my.stlcc.com','10', '1111')
+	,	('Kimberly', 'Joseph', 'kjoseph@my.stlcc.com','10', '1111')
+	,	('Ulises', 'Rasmussen', 'urasmussen@my.stlcc.com','10', '1111')
+	,	('Saige', 'Morrison', 'smorrison@my.stlcc.com','10', '1111')
+	,	('Osiris', 'Stafford', 'ostafford@my.stlcc.com','10', '1111')
+	,	('Aleah', 'Stanley', 'astanley@my.stlcc.com','10', '1111')
+	,	('Dominik', 'Lawrence', 'dlawrence@my.stlcc.com','10', '1111')
+	,	('Oakleigh', 'Foster', 'ofoster@my.stlcc.com','10', '1111')
+	,	('Marco', 'Abbott', 'mabbott@my.stlcc.com','10', '1111')
+	,	('Marlowe', 'Huang', 'mhuang@my.stlcc.com','10', '1111')
+	,	('Brooks', 'Dennis', 'adennis@my.stlcc.com','10', '1111')
+	,	('Amelie', 'Fuentes', 'afuentes@my.stlcc.com','10', '1111')
+	,	('Franklin', 'Blackwell', 'fblackwell@my.stlcc.com','10', '1111')
+	,	('Amaya', 'Hancock', 'ahancock@stlcc.com','50', '9999')
+	,	('Luka', 'Butler', 'lbutler@stlcc.com','50', '9999')
+	,	('Maeve', 'Orr', 'morr@stlcc.com','50', '9999')
+	,	('Clarissa', 'Villa', 'ahancock@stlcc.com','90', '7777')
+	,	('Hayden', 'Xiong', 'hxiong@stlcc.com','90', '7777')
+	,	('Jenesis', 'Zimmerman', 'jzimmerman@stlcc.com','90', '7777');
 
 INSERT INTO Course
 VALUES
-		('IS 112', 'Introduction to Computer Science', '9000','11:00:00','12:00:00')
-	,	('IS 280', 'Python', '9000','13:00:00','14:00:00')
-	,	('IS 241', 'Systems Analysis and Design', '9000','16:00:00','17:00:00')
-	,	('ENG 101', 'College Composition I', '9010','18:00:00','19:00:00')
-	,	('ENG 103', 'Report Writing', '9010','08:00:00','09:00:00')
-	,	('ENG 102', 'College Composition II', '9010','12:00:00','13:00:00')
-	,	('IS 229', 'Unix/Linux I', '9020','07:00:00','08:00:00')
-	,	('IS 168', 'GitHub for Developers', '9020','10:00:00','11:00:00')
-	,	('IS 101', 'Keyboarding', '9020','15:00:00','16:00:00');
+		('IS 112', 'Introduction to Computer Science', '1031','11:00:00','11:50:00')
+	,	('IS 280', 'Python', '1031','13:00:00','13:50:00')
+	,	('IS 241', 'Systems Analysis and Design', '1031','16:00:00','16:50:00')
+	,	('ENG 101', 'College Composition I', '1032','18:00:00','18:50:00')
+	,	('ENG 103', 'Report Writing', '1032','08:00:00','08:50:00')
+	,	('ENG 102', 'College Composition II', '1032','12:00:00','12:50:00')
+	,	('IS 229', 'Unix/Linux I', '1033','07:00:00','07:50:00')
+	,	('IS 168', 'GitHub for Developers', '1033','10:00:00','10:50:00')
+	,	('IS 101', 'Keyboarding', '1033','15:00:00','15:50:00');
 
 INSERT INTO Enrollment
 VALUES
@@ -212,3 +203,4 @@ VALUES
 	,	('1002','3080')
 	,	('1001','3080')
 	,	('1000','3080');
+
